@@ -22,7 +22,7 @@
     python manage.py startapp main - создание приложения 
 
     python manage.py migrate
-    python manage.py makemigrations tests   
+    python manage.py makemigrations main   
 
     python manage.py runserver - запуск сервера
 
