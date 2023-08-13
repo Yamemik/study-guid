@@ -14,7 +14,13 @@
     deactivate - выйти
 
 ### install library into venv
+    python -m ensurepip --upgrade 
+
     pip install django
+
+    pip install djangorestframework
+    pip install markdown
+    pip install django-filter
 
 ### command django
     django-admin startproject config . - создание проекта
