@@ -28,7 +28,8 @@
     python manage.py startapp main - создание приложения 
 
     python manage.py migrate
-    python manage.py makemigrations main   
+    python manage.py makemigrations main 
+    python manage.py createsuperuser
 
     python manage.py runserver - запуск сервера
 

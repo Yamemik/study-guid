@@ -15,16 +15,16 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import include,path
-from rest_framework import routers, serializers, viewsets
+from django.urls import include, path
+from rest_framework import routers
 
-from django.contrib.auth.models import User
 from main import views
 
 
 router = routers.DefaultRouter()
 router.register(r'users', views.UserViewSet)
 router.register(r'groups', views.GroupViewSet)
+router.register(r'students', views.StudentViewSet)
 
 
 # Wire up our API using automatic URL routing.

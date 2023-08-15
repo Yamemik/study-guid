@@ -1,8 +1,13 @@
 from django.shortcuts import render, HttpResponse
 from django.contrib.auth.models import User, Group
-from rest_framework import viewsets
+from rest_framework import viewsets, generics
 from rest_framework import permissions
-from .serializers import UserSerializer, GroupSerializer
+from rest_framework.response import Response
+
+from .models import Student, Organization
+from .serializers import *
+
+from rest_framework.views import APIView
 
 
 def index(request):
@@ -24,4 +29,16 @@ class GroupViewSet(viewsets.ModelViewSet):
     """
     queryset = Group.objects.all()
     serializer_class = GroupSerializer
+    permission_classes = [permissions.IsAuthenticated]
+
+
+class StudentViewSet(viewsets.ModelViewSet):
+    queryset = Student.objects.all()
+    serializer_class = StudentSerializer
+    permission_classes = [permissions.IsAuthenticated]
+
+
+class OrganizationViewSet(viewsets.ModelViewSet):
+    queryset = Organization.objects.all()
+    serializer_class = OrganizationSerializer
     permission_classes = [permissions.IsAuthenticated]
