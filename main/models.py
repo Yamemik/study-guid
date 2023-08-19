@@ -2,13 +2,13 @@ from django.db import models
 
 
 class Organization(models.Model):
-    TOKEN_IS_EXPIRED = 'token is expired'
+    TOKEN_IS_EXPIRED = "token is expired"
 
     name = models.CharField(max_length=200)
     token = models.CharField(max_length=500, unique=True, default=TOKEN_IS_EXPIRED)
-    end_date = models.DateTimeField('date of action')
+    end_date = models.DateTimeField("date of action")
     description = models.CharField(max_length=500, blank=True)
-    avatar_url = models.ImageField(upload_to='main/static/avatars')
+    avatar_url = models.ImageField(upload_to="main/static/avatars")
 
     def __str__(self):
         return self.name
@@ -32,20 +32,10 @@ class Test(models.Model):
 
 
 class Result(models.Model):
-    date = models.DateTimeField('date of achievement')
+    date = models.DateTimeField("date of achievement")
     data = models.JSONField()
     student = models.ForeignKey(Student, on_delete=models.CASCADE)
     test = models.ForeignKey(Test, on_delete=models.CASCADE)
 
     def __str__(self):
         return self.date
-
-
-
-
-
-
-
-
-
-

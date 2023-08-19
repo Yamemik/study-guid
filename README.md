@@ -33,6 +33,10 @@
 
     python manage.py runserver - запуск сервера
 
+### command python
+    print(dir(__builtins__)) -- список аттрибутов (встроенные функции)
+    print(help(list.__eq__))
+
 ### command git
     git add .
     git commit -m 'message'
