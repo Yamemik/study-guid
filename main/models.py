@@ -1,4 +1,5 @@
 from django.db import models
+from django.contrib.auth.models import User
 
 
 class Organization(models.Model):
@@ -13,8 +14,13 @@ class Organization(models.Model):
     def __str__(self):
         return self.name
 
+    class Meta:
+        verbose_name = "Организация"
+        verbose_name_plural = "Организации"
+
 
 class Student(models.Model):
+    user = models.OneToOneField(User, on_delete=models.CASCADE)
     organization = models.ForeignKey(Organization, on_delete=models.CASCADE)
     fio = models.CharField(max_length=200)
     email = models.EmailField(unique=True)
