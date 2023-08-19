@@ -1,12 +1,13 @@
-# study_guid
+# study-guid
 
-## description
+## About project
+### description
     профориентация школьников
 
-## technical development tools
+### technical development tools
     Python, Django, SQLite
 
-## command py
+## Command py
 
 ### create venv and activate
     python -m venv venv - создание виртуального пространства
@@ -17,7 +18,6 @@
     python -m ensurepip --upgrade 
 
     pip install django
-
     pip install djangorestframework
     pip install markdown
     pip install django-filter
@@ -43,3 +43,7 @@
     git push
     git push origin <name_branch>
     git merge <name_branch>
+
+## About us
+### by Yamemik
+    https://github.com/Yamemik
